@@ -2,7 +2,12 @@ How to run:
 
 Install nodejs
 
+on the root folder run once
 ```bash
-On the root folder run npm i once
-npm run dev to start the dev server
+npm install
+```
+
+every time to start the dev server you can run
+```bash
+npm run dev
 ```
