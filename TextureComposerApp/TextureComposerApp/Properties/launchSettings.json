@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TextureTool": {
+      "commandName": "Project",
+      "workingDirectory": "$(TargetDir)"
+    }
+  }
+}
