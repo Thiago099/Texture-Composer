@@ -134,7 +134,6 @@
   <details>
     <summary><h2>Pattern Properties</h2></summary>
       <h3>Each pattern type will have its own properties that you can configure</h3>
-      <img src="https://github.com/user-attachments/assets/ac9d7253-0a3c-40aa-8789-521dbdf8c053"/>
       <details>
         <summary>Color properties</summary>
         <img src="https://github.com/user-attachments/assets/6a718741-9453-452c-a6e0-071751e15c6c"/>
