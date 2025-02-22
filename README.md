@@ -2,8 +2,6 @@
 <h1>Texture Composer</h1>
 
 <p>This is a texture tool focused on automation</p>
-<p>There is no resolution settings, the resolution is defined by the composition mask file, or the bottom most layer if there is no composition masks.</p>
-<p>This decision is so you can generate variants with different resolutions</p>
 <p>Project files will contain all midias used on it full resolution, lossless compressed</p>
 
 [Web app](https://thiago099.github.io/texture-composer/)
@@ -155,7 +153,13 @@
   <hr/>
 </details>
 
+<h3>Output resolution</h3>
+
+<p>There is no resolution settings, the resolution is defined by the composition mask file, or the bottom most layer if there is no composition masks.</p>
+<p>This decision is so you can generate variants with different resolutions</p>
+
 <h3>Running the source code</h3>
+
 How to run:
 
 Install nodejs
