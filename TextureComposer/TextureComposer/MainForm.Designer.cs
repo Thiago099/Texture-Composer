@@ -44,6 +44,8 @@
             webView.Size = new Size(1920, 1080);
             webView.TabIndex = 0;
             webView.ZoomFactor = 1D;
+            webView.NavigationCompleted += webView_NavigationCompleted;
+            webView.KeyDown += webView_KeyDown;
             // 
             // MainForm
             // 
