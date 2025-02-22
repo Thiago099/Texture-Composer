@@ -140,7 +140,7 @@
         <hr/>
       </details>
       <details>
-        <summary>Linear gradient properties</summary>
+        <summary>Gradient properties</summary>
         <img src="https://github.com/user-attachments/assets/df31dde5-c682-4508-844f-1bf075d4bfc1"/>
         <hr/>
       </details>
