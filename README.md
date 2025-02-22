@@ -22,10 +22,10 @@
   <details>
     <summary>Render button</summary>
     <h3>The render button opens a modal that allows you to export your work into images</h3>
-    <p>These filles will have the maximun resolution possible</p> 
-    <p>You can right click on the name of each file to edit it</p> 
+    <p>These files will have the maximum resolution possible</p> 
+    <p>You can right-click on the name of each file to edit it</p> 
     <img src="https://github.com/user-attachments/assets/7994a46d-90aa-441f-9966-583e5c017702"/>
-    <h3>You can click on the edit button, in order to change the medias of each output</h3>
+    <h3>You can click on the edit button, in order to change the midias of each output</h3>
     <img src="https://github.com/user-attachments/assets/ec133900-438f-4fc4-9920-56ee3f518e0b"/>
     <hr/>
   </details>
@@ -33,13 +33,13 @@
 </details>
 <details>
   <summary>Right panel</summary>
-  <h3>The right panel continas your files, the layer list and your change history</h3>
+  <h3>The right panel contains your files, the layer list and your change history</h3>
   <img src="https://github.com/user-attachments/assets/f604f3b1-b600-4f78-a46b-b6e18ec104a9"/>
   <details>
       <summary>File list</summary>
       <h3>You can click on each file in order to preview and edit it</h3>
       <p>You can drag and drop the files in order to reorder them</p> 
-      <p>You can also create folders on the file menu, The folders work like colapsible separator to your files</p> 
+      <p>You can also create folders on the file menu, The folders work like collapsible separator to your files</p> 
       <img src="https://github.com/user-attachments/assets/3859a979-205b-493d-a50d-b235c124d7fc"/>
     <hr/>
   </details>
@@ -55,33 +55,33 @@
   <details>
     <summary>History list</summary>
     <h3>The history list contains all your changes</h3>
-    <p>You can click on any change in order to revert your projeto to that version</p> 
-    <p>You can press ctrl+z in order to revert the last change</p> 
-    <p>You can press ctrl+y in order to go to a newer version</p> 
+    <p>You can click on any change in order to revert your project to that version</p> 
+    <p>You can press CTRL+Z in order to revert the last change</p> 
+    <p>You can press CTRL+Y in order to go to a newer version</p> 
     <img src="https://github.com/user-attachments/assets/ac9d7253-0a3c-40aa-8789-521dbdf8c053"/>
     <hr/>
   </details>
 </details>
   <details>
-    <summary>Left pannel</summary>
-    <h3>The left pannel continas the properties to all of the selected files</h3>
+    <summary>Left panel</summary>
+    <h3>The left panel contains the properties to all the selected files</h3>
     <img src="https://github.com/user-attachments/assets/c3abec46-ab79-4a74-8b4b-94532d441e12"/>
     <details>
       <summary>Composition properties</summary>
-      <p>The mask file, is an id map that can be used by the layers to display texture on certain areas</p> 
+      <p>The mask file, is an ID map that can be used by the layers to display texture on certain areas</p> 
       <p>The normal output will use a shader to convert the composition final output to a normal map</p> 
-      <p>The texutre swap tab allows you to easly swap any textures used by your composition</p> 
+      <p>The texture swap tab allows you to easily swap any textures used by your composition</p> 
       <img src="https://github.com/user-attachments/assets/ba07a4f2-7a60-49be-aa0e-b117ef540abc"/>
       <hr/>
   </details>
   <details>
     <summary>The layer properties</summary>
-    <p>The layer properties is the most adivanced menu of this program, it allows you modify your textures in various ways</p> 
-    <p>No changes are lost, so you can easly modify the parameters of any change at any point</p> 
+    <p>The layer properties is the most advanced menu of this program, it allows you to modify your textures in various ways</p> 
+    <p>No changes are lost, so you can easily modify the parameters of any change at any point</p> 
     <img src="https://github.com/user-attachments/assets/2343f0c3-1a63-4e3c-bad8-1efd205ec528"/>
     <details>
       <summary>Basic</summary>
-      <p>On the basic tab, you can modify the file of the layer, wich is the base for rendering</p> 
+      <p>On the basic tab, you can modify the file of the layer, which is the base for rendering</p> 
       <p>You can drag and drop any files from the files tab into this input</p> 
       <img src="https://github.com/user-attachments/assets/cff74c2b-53a6-4671-8c4e-01ef5da0ace8"/>
       <hr/>
@@ -94,8 +94,8 @@
     </details>
     <details>
       <summary>Mask</summary>
-      <p>In the mask tab you can tell wich part of the composition mask file this layer will apply</p> 
-      <p>You can have an additional mask to the layer wich is another file, wich will be used as both luma and alpha msk</p> 
+      <p>In the mask tab, you can tell which part of the composition mask file this layer will apply</p> 
+      <p>You can have an additional mask to the layer which is another file, which will be used as both luma and alpha mask</p> 
       <img src="https://github.com/user-attachments/assets/bc528b15-54c9-4c02-a34d-0a54101ba542"/>
       <hr/>
     </details>
@@ -103,15 +103,15 @@
       <summary>Blending</summary>
       <p>The blending tab tells how your layer will blend with other layers</p> 
       <p>Here you can set the alpha, blend mode</p> 
-      <p>You can also create your own blend mode by cheking and uncheging the channel boxes</p> 
+      <p>You can also create your own blend mode by checking and unchecking the channel boxes</p> 
       <img src="https://github.com/user-attachments/assets/ba9bea5e-d166-43ae-b10a-e9267a52dade"/>
       <hr/>
     </details>
     <details>
       <summary>Effects</summary>
       <p>In this tab you can add special effects to your layer, such as blur and gradient map</p> 
-      <p>You can set up a custom masks to your blur wich tells how much each part of your texture will be blurred</p> 
-      <p>The gradient map and all colors in this program support alpha, wich i found very usefull for blending texture maps</p> 
+      <p>You can set up a custom masks to your blur which tells how much each part of your texture will be blurred</p> 
+      <p>The gradient map and all colors in this program support alpha, which I found very useful for blending texture maps</p> 
       <img src="https://github.com/user-attachments/assets/34cdfa6c-f28a-4f04-85b5-41529ff082d2"/>
       <hr/>
     </details>
