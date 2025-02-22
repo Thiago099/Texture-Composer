@@ -150,6 +150,8 @@
       </details>
     <hr/>
   </details>
+  <hr/>
+</details>
   <details>
     <summary><h1>View panel</h1></summary>
     <p>Here you can see an low resolution preview of the current selected file</p> 
@@ -157,8 +159,6 @@
     <img src="https://github.com/user-attachments/assets/3860da2e-7311-48f7-9533-c13b378046bf"/>
     <hr/>
   </details>
-  <hr/>
-</details>
 
 <h3>Output resolution</h3>
 
