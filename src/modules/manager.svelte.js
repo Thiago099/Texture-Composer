@@ -180,6 +180,9 @@ class Manager{
         const item = this.files[index]
         for(const file of this.files){
             if(file instanceof Composition){
+                if(file.file == item){
+                    file.file = null
+                }
                 for(const layer of file.layers){
                     if(layer.file == item){
                         layer.file = null

@@ -8,9 +8,10 @@
   import {ConfirmModalManager} from "../../modules/confirmModalManager.svelte.js"
   import { Folder } from "../../modules/folder.svelte.js";
   import { Pattern } from "../../modules/pattern.svelte.js";
+  import { RenderManager } from "../../modules/renderManager.svelte.js";
 
+  const renderManager = RenderManager.GetSingleton();
   const confirmModalManager = ConfirmModalManager.GetSingleton()
-
   const io = ListIO.GetFileListSingleton();
 
   io.selectEvent = file => {
@@ -37,6 +38,7 @@
     const wasSelected = manager.getSelectedFileIndex() == index
 
     manager.cleanReferences(index)
+    renderManager.cleanReferences(index)
     manager.removeFromTabs(index)
 
 

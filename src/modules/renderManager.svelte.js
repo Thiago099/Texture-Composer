@@ -54,6 +54,26 @@ class RenderManager{
         const dataURL = output.base.outputCanvas.toDataURL('image/png');
         return dataURL
     }
+
+    cleanReferences(index){
+        const item = manager.files[index]
+        for(const comp of this.outputs){
+            if(comp instanceof CompositionReference){
+
+                for(const swap of comp.files){
+                    if(swap.file.id == item.id){
+                        swap.file = swap.baseFile
+                    }
+                }
+
+                comp.files = comp.files.filter(swap => swap.baseFile.id !== item.id);
+            }
+
+
+            comp.BuildFileCache()
+        }
+    }
+    
     async Download(){
         const saveModalManager = SaveModalManager.GetSingleton();
 
@@ -85,6 +105,7 @@ class RenderManager{
             this.selectedOutput = output
             this.contentModal.setTitle("Rendering output - "+ output.name)
             this.contentModal.open()
+            this.selectedOutput.UpdatePreview()
         }
     }
     PickColorEvent(output, item){
