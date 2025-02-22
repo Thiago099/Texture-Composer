@@ -66,6 +66,7 @@
     <p>You can click on any change in order to revert your project to that version</p> 
     <p>You can press CTRL+Z in order to revert the last change</p> 
     <p>You can press CTRL+Y in order to go to a newer version</p> 
+    <p>The render modal is not affected by the history</p> 
     <img src="https://github.com/user-attachments/assets/ac9d7253-0a3c-40aa-8789-521dbdf8c053"/>
     <hr/>
   </details>
