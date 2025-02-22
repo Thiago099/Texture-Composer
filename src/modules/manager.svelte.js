@@ -208,8 +208,6 @@ class Manager{
         const current = this.history[this.historyIndex]
         this.files = current.files.map(x=>x.Copy())
         this.selectedFileHistory = []
-        this.historyIndex = current.historyIndex
-        const fileIo = ListIO.GetFileListSingleton()
         this.selectedFile = this.files[current.files.indexOf(current.selectedFile)]
     }
     undoHistory(){
