@@ -166,7 +166,7 @@ every time to start the dev server you can run
 npm run dev
 ```
 
-building for productionj
+building for production
 ```bash
 npm run build
 ```
