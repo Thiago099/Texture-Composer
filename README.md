@@ -21,7 +21,7 @@
   <details>
     <summary><h2>File menu</h2></summary>
     <h3>The file menu allows you to load and create new files</h3>
-    <p>You can also load files by dragging and dropping them into the main window</p> 
+    <p>You can also upload files by dragging and dropping them into the window</p> 
     <img src="https://github.com/user-attachments/assets/542b86f3-adb4-4c48-bc01-ee42281db4a9"/>
     <hr/>
   </details>
@@ -155,7 +155,6 @@
   <details>
     <summary><h1>View panel</h1></summary>
     <p>Here you can see an low resolution preview of the current selected file</p> 
-    <p>You can drop images here in order to upload them, they will go into the top of the files list</p> 
     <img src="https://github.com/user-attachments/assets/3860da2e-7311-48f7-9533-c13b378046bf"/>
     <hr/>
   </details>
