@@ -2,7 +2,7 @@
 <h1>Texture Composer</h1>
 
 <p>This is a texture tool focused on automation</p>
-<p>You might have noticed that there is no resolution settigns, the resolution is defined by the composition mask file, or the bottom most layer if there is no composition maks.</p>
+<p>There is no resolution settings, the resolution is defined by the composition mask file, or the bottom most layer if there is no composition masks.</p>
 <p>This decision is so you can generate variants with different resolutions</p>
 
 [Web app](https://thiago099.github.io/texture-composer/)
