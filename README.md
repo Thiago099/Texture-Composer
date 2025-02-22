@@ -1,6 +1,9 @@
 
 <h1>Texture Composer</h1>
-<h3>This is the editor, and below ill list all of its features</h3>
+
+[Web app](https://thiago099.github.io/texture-composer/)
+
+<h3>Documentation</h3>
 <img src="https://github.com/user-attachments/assets/e891c5e8-a274-4a91-9846-5f649f6bad31"/>
 <details>
   <summary><h1>Top Panel</h1></summary>
@@ -148,7 +151,7 @@
   <hr/>
 </details>
 
-
+<h3>Running the source code</h3>
 How to run:
 
 Install nodejs
@@ -161,4 +164,9 @@ npm install
 every time to start the dev server you can run
 ```bash
 npm run dev
+```
+
+building for productionj
+```bash
+npm run build
 ```
