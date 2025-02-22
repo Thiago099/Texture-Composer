@@ -322,6 +322,7 @@ class ManagerPersistence {
                 pattern.persistence = item.persistence
                 pattern.disturbance = item.disturbance
                 pattern.contrast = item.contrast
+                pattern.name = item.name
 
                 fileDict[pattern.id] = pattern
             } 
