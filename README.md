@@ -1,7 +1,7 @@
 
 <h1>Texture Composer</h1>
 <h3>This is the editor, and below ill list all of its features</h3>
-<img src="[https://github.com/user-attachments/assets/093dbbe4-7b19-48c4-8fa5-cec6f0da3d81](https://github.com/user-attachments/assets/e891c5e8-a274-4a91-9846-5f649f6bad31)"/>
+<img src="https://github.com/user-attachments/assets/e891c5e8-a274-4a91-9846-5f649f6bad31"/>
 <details>
   <summary>Top Panel</summary>
   <img src="https://github.com/user-attachments/assets/8b387184-5b4b-4abc-a314-ada789c60791"/>
