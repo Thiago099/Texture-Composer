@@ -143,14 +143,16 @@ class Layer extends ListItem{
     }
     RenderAsync(maxSize){
         this.renderingContext.Lock(async ()=>{
-            await this.renderingContext.InitRendererAsync()
+            if(this.file && this.file.image){
+                await this.renderingContext.InitRendererAsync()
             
-            const manager = Manager.GetSingleton()
-            const size = {width:this.file.image.width, height:this.file.image.height, maxSize}
-            await this.renderingContext.Render(manager.selectedFile, [this], true, size, manager.selectedFile)
-            const canvas = this.renderingContext.GetCanvas(manager.selectedFile)
-            copyCanvas(canvas, this.canvas)
-            this.CreateThumbnail(this.canvas)
+                const manager = Manager.GetSingleton()
+                const size = {width:this.file.image.width, height:this.file.image.height, maxSize}
+                await this.renderingContext.Render(manager.selectedFile, [this], true, size, manager.selectedFile)
+                const canvas = this.renderingContext.GetCanvas(manager.selectedFile)
+                copyCanvas(canvas, this.canvas)
+                this.CreateThumbnail(this.canvas)
+            }
         })
     }
 }
