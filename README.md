@@ -6,21 +6,21 @@
   <summary><h1>Top Panel</h1></summary>
   <img src="https://github.com/user-attachments/assets/8b387184-5b4b-4abc-a314-ada789c60791"/>
   <details>
-    <summary>Project menu</summary>
+    <summary><h2>Project menu</h2></summary>
     <h3>The project menu allows you to save your projects</h3>
     <p>You can also drop projects into the main window to load them</p> 
     <img src="https://github.com/user-attachments/assets/0000dff0-5931-469c-bd5e-239ada979232"/>
     <hr/>
   </details>
   <details>
-    <summary>File menu</summary>
+    <summary><h2>File menu</h2></summary>
     <h3>The file menu allows you to load and create new files</h3>
     <p>You can also load files by dragging and dropping them into the main window</p> 
     <img src="https://github.com/user-attachments/assets/542b86f3-adb4-4c48-bc01-ee42281db4a9"/>
     <hr/>
   </details>
   <details>
-    <summary>Render button</summary>
+    <summary><h2>Render button</h2></summary>
     <h3>The render button opens a modal that allows you to export your work into images</h3>
     <p>These files will have the maximum resolution possible</p> 
     <p>You can right-click on the name of each file to edit it</p> 
@@ -36,7 +36,7 @@
   <h3>The right panel contains your files, the layer list and your change history</h3>
   <img src="https://github.com/user-attachments/assets/f604f3b1-b600-4f78-a46b-b6e18ec104a9"/>
   <details>
-      <summary>File list</summary>
+      <summary><h2>File list</h2></summary>
       <h3>You can click on each file in order to preview and edit it</h3>
       <p>You can drag and drop the files in order to reorder them</p> 
       <p>You can also create folders on the file menu, The folders work like collapsible separator to your files</p> 
@@ -44,7 +44,7 @@
     <hr/>
   </details>
   <details>
-      <summary>Layer list</summary>
+      <summary><h2>Layer list</h2></summary>
       <h3>When a composition is selected your layers will appear here</h3>
       <p>You can drag and drop the layers in order to reorder them</p> 
       <p>The order of the layer list is important as lower layers will be rendered first</p> 
@@ -53,7 +53,7 @@
     <hr/>
   </details>
   <details>
-    <summary>History list</summary>
+    <summary><h2>History list</h2></summary>
     <h3>The history list contains all your changes</h3>
     <p>You can click on any change in order to revert your project to that version</p> 
     <p>You can press CTRL+Z in order to revert the last change</p> 
@@ -67,7 +67,7 @@
     <h3>The left panel contains the properties to all the selected files</h3>
     <img src="https://github.com/user-attachments/assets/c3abec46-ab79-4a74-8b4b-94532d441e12"/>
     <details>
-      <summary>Composition properties</summary>
+      <summary><h2>Composition properties</h2></summary>
       <p>The mask file, is an ID map that can be used by the layers to display texture on certain areas</p> 
       <p>The normal output will use a shader to convert the composition final output to a normal map</p> 
       <p>The texture swap tab allows you to easily swap any textures used by your composition</p> 
@@ -75,7 +75,7 @@
       <hr/>
   </details>
   <details>
-    <summary>The layer properties</summary>
+    <summary><h2>The layer properties</h2></summary>
     <p>The layer properties is the most advanced menu of this program, it allows you to modify your textures in various ways</p> 
     <p>No changes are lost, so you can easily modify the parameters of any change at any point</p> 
     <img src="https://github.com/user-attachments/assets/2343f0c3-1a63-4e3c-bad8-1efd205ec528"/>
@@ -125,7 +125,7 @@
 
   </details>
   <details>
-    <summary>Pattern Properties</summary>
+    <summary><h2>Pattern Properties</h2></summary>
       <h3>Each pattern type will have its own properties that you can configure</h3>
       <img src="https://github.com/user-attachments/assets/ac9d7253-0a3c-40aa-8789-521dbdf8c053"/>
       <details>
