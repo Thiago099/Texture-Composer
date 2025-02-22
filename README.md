@@ -2,8 +2,7 @@
 <h1>Texture Composer</h1>
 
 <p>This is a texture tool focused on automation</p>
-<p>There is no resolution settings, the resolution is defined by the composition mask file, or the bottom most layer if there is no composition masks.</p>
-<p>This decision is so you can generate variants with different resolutions</p>
+<p>Project files will contain all midias used on it full resolution, lossless compressed</p>
 
 [Web app](https://thiago099.github.io/texture-composer/)
 
@@ -134,14 +133,13 @@
   <details>
     <summary><h2>Pattern Properties</h2></summary>
       <h3>Each pattern type will have its own properties that you can configure</h3>
-      <img src="https://github.com/user-attachments/assets/ac9d7253-0a3c-40aa-8789-521dbdf8c053"/>
       <details>
         <summary>Color properties</summary>
         <img src="https://github.com/user-attachments/assets/6a718741-9453-452c-a6e0-071751e15c6c"/>
         <hr/>
       </details>
       <details>
-        <summary>Linear gradient properties</summary>
+        <summary>Gradient properties</summary>
         <img src="https://github.com/user-attachments/assets/df31dde5-c682-4508-844f-1bf075d4bfc1"/>
         <hr/>
       </details>
@@ -155,7 +153,13 @@
   <hr/>
 </details>
 
+<h3>Output resolution</h3>
+
+<p>There is no resolution settings, the resolution is defined by the composition mask file, or the bottom most layer if there is no composition masks.</p>
+<p>This decision is so you can generate variants with different resolutions</p>
+
 <h3>Running the source code</h3>
+
 How to run:
 
 Install nodejs
