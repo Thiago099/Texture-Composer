@@ -108,7 +108,6 @@ class Composition extends ListItem {
     }
     async RenderAsync(maxSize, originalWidth = null, originalHeight = null, createThumbnail = true){
 
-        console.log(new Error().stack)
 
         if(this.layers.length == 0){
             return
