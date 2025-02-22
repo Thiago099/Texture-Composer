@@ -24,7 +24,7 @@ function createProgram(gl, vertexShader, fragmentShader) {
 }
 
 function get(path){
-    return new Promise(resolve=>fetch(path).then(x=>x.text()).then(resolve))
+    return new Promise(resolve=>fetch(`${window.location.href}${path}`).then(x=>x.text()).then(resolve))
 }
 
 async function processShader(content){
