@@ -16,8 +16,6 @@
   <div class="margin-bottom-30">
     {#key manager.selectedFile}
     {#key manager.historyIndex}
-      <label>Name</label>
-      <Text bind:value={manager.selectedFile.name}></Text>
       <label>Mask File</label>
       <File bind:value={manager.selectedFile.file} filter={x=>!x.Contains(manager.selectedFile)} oninput={()=>{manager.selectedFile?.GenerateMask();manager.updateScreen();manager.pushHistory("set mask")}}></File>
     {/key}

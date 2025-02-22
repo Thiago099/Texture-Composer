@@ -105,6 +105,14 @@ class Layer extends ListItem{
         this.tile = true
         this.xOffset = 0
         this.yOffset = 0
+
+        this.enableR = true
+        this.enableG = true
+        this.enableB = true
+    
+        this.enableH = false
+        this.enableS = false
+        this.enableV = false
     }
     CreateThumbnail(canvas){
         this.thumbnail = createThumbnail(canvas, {width:40, height:40})

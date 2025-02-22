@@ -104,8 +104,6 @@
 {#if manager.selectedFile?.selectedLayer}
 {#snippet basic()}
   {#key manager.historyIndex}
-  <label>Name</label>
-  <Text bind:value={manager.selectedFile.selectedLayer.name}></Text>
   <label>File</label>
   <File bind:value={manager.selectedFile.selectedLayer.file} oninput={oninput("layer file")} filter={x=>!x.Contains(manager.selectedFile)}></File>
   <label>Reset All Properties</label>

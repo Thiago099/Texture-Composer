@@ -44,6 +44,7 @@
   <details>
       <summary><h2>File list</h2></summary>
       <h3>You can click on each file in order to preview and edit it</h3>
+      <p>You can right click to rename a file</p> 
       <p>You can drag and drop the files in order to reorder them</p> 
       <p>You can also create folders on the file menu, The folders work like collapsible separator to your files</p> 
       <img src="https://github.com/user-attachments/assets/3859a979-205b-493d-a50d-b235c124d7fc"/>
@@ -52,6 +53,7 @@
   <details>
       <summary><h2>Layer list</h2></summary>
       <h3>When a composition is selected your layers will appear here</h3>
+      <p>You can right click to rename a layer</p> 
       <p>You can drag and drop the layers in order to reorder them</p> 
       <p>The order of the layer list is important as lower layers will be rendered first</p> 
       <p>You can drag and drop any item from the file list into here or directly in the display panel</p> 
