@@ -3,7 +3,7 @@
 <h3>This is the editor, and below ill list all of its features</h3>
 <img src="https://github.com/user-attachments/assets/e891c5e8-a274-4a91-9846-5f649f6bad31"/>
 <details>
-  <summary>Top Panel</summary>
+  <summary><h1>Top Panel</h1></summary>
   <img src="https://github.com/user-attachments/assets/8b387184-5b4b-4abc-a314-ada789c60791"/>
   <details>
     <summary>Project menu</summary>
@@ -32,7 +32,7 @@
   <hr/>
 </details>
 <details>
-  <summary>Right panel</summary>
+  <summary><h1>Right panel</h1></summary>
   <h3>The right panel contains your files, the layer list and your change history</h3>
   <img src="https://github.com/user-attachments/assets/f604f3b1-b600-4f78-a46b-b6e18ec104a9"/>
   <details>
@@ -63,7 +63,7 @@
   </details>
 </details>
   <details>
-    <summary>Left panel</summary>
+    <summary><h1>Left panel</h1></summary>
     <h3>The left panel contains the properties to all the selected files</h3>
     <img src="https://github.com/user-attachments/assets/c3abec46-ab79-4a74-8b4b-94532d441e12"/>
     <details>
