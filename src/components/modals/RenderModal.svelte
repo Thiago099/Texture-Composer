@@ -33,7 +33,7 @@ const confirmManager = ConfirmModalManager.GetSingleton()
         </div>
       </div>
       <Toggle bind:value={renderManager.selectedOutput.enabled}>Enabled</Toggle>
-      <button class="button full"  onclick={renderManager.CopyEvent(renderManager.selectedOutput)}><i class="fa-solid fa-copy"></i> Copy</button>
+      <button class="button full"  onclick={renderManager.CopyEvent(renderManager.selectedOutput)}><i class="fa-solid fa-copy"></i> Duplicate</button>
       <button class="button full"  onclick={()=>confirmManager.Prompt("Are you sure you want to remove this output",()=>renderManager.RemoveOutput(renderManager.selectedOutput))}><i class="fa-solid fa-trash"></i> Remove</button>
       <Button action={()=>confirmManager.Prompt("Are you sure you want to reset this output",()=>renderManager.selectedOutput.Load())}><i class="fa-solid fa-broom"></i> Clean and Update</Button>
       <Button action={()=>renderManager.selectedOutput.UpdatePreview()}><i class="fa-solid fa-arrows-rotate"></i> Update</Button>
