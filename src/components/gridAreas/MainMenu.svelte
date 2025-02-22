@@ -65,7 +65,7 @@ function uploadMedias(){
         if (files.length === 1) {
           const file = files[0];
 
-          if (file.type === 'application/zip' || file.name.endsWith('.zip')) {
+          if (file.name.endsWith('.tcx')) {
             confirmModalManager.Prompt("Are you sure you want to load this project?", ()=>{
               ManagerPersistence.Load(file)
             })
