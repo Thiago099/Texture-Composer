@@ -26,28 +26,28 @@
 <Tabs tabs={
   [
     {
-      title:"Composition",
+      title:"Composition Properties",
       icon:"fa-solid fa-cubes",
       enabled: manager.selectedFile != null && manager.selectedFile instanceof Composition,
       defaultOpen:true,
       element:compositionElement
     },
     {
-      title:"Layer",
+      title:"Layer Properties",
       icon:"fa-solid fa-layer-group",
       enabled: manager.selectedFile?.selectedLayer != null,
       defaultOpen:true,
       element:layerElement
     },
     {
-      title:"Folder",
+      title:"Folder Properties",
       icon:"fa-solid fa-folder",
       enabled: manager.selectedFile != null && manager.selectedFile instanceof Folder,
       defaultOpen:true,
       element:folderElement
     },
     {
-      title:"Pattern",
+      title:"Pattern Properties",
       icon:"fa-solid fa-droplet",
       enabled: manager.selectedFile != null && manager.selectedFile instanceof Pattern,
       defaultOpen:true,

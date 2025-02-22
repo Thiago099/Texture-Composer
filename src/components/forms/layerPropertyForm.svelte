@@ -200,7 +200,6 @@ disabled={manager.selectedFile.selectedLayer.enableH || manager.selectedFile.sel
 <label>Invert</label>
 <Toggle bind:value={manager.selectedFile.selectedLayer.invert} oninput={oninput("layer invert")}>Invert</Toggle>
 <label>Gradient map</label>
-<label>Invert</label>
 <Toggle bind:value={manager.selectedFile.selectedLayer.enableGradientMap} oninput={oninput("enable gradient map")}>Enable gradient map</Toggle>
 
 {#if manager.selectedFile.selectedLayer.enableGradientMap}
