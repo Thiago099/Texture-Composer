@@ -68,6 +68,8 @@ class Composition extends ListItem {
         result.file = this.file
         result.name = this.name
         result.image = this.image
+        result.convertToNormal = this.convertToNormal
+        result.normalStrength = this.normalStrength
         result.selectedLayer = result.layers[this.layers.indexOf(this.selectedLayer)]
         return result
     }
