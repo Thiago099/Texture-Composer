@@ -5,7 +5,8 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 export default defineConfig({
   plugins: [svelte()],
   build: {
-    outDir: './TextureComposerApp\\TextureComposerApp\\public',
+    //base: '/Texture-Composer/', 
+    outDir: './TextureComposer\\TextureComposer\\public',
     emptyOutDir: true, // also necessary
   }
 })

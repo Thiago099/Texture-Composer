@@ -104,7 +104,9 @@ class Composition extends ListItem {
         
         return [width, height]
     }
-    async RenderAsync(maxSize, originalWidth = null, originalHeight = null){
+    async RenderAsync(maxSize, originalWidth = null, originalHeight = null, createThumbnail = true){
+
+        console.log(new Error().stack)
 
         if(this.layers.length == 0){
             return
@@ -121,13 +123,13 @@ class Composition extends ListItem {
             const scale = layer.scale / 100
 
             if(layer.file instanceof Composition){
-                await layer.file.RenderAsync(maxSize * scale, width * scale, height * scale)
+                await layer.file.RenderAsync(maxSize * scale, width * scale, height * scale, false)
             }
             if(layer.fileMask instanceof Composition){
-                await layer.fileMask.RenderAsync(maxSize * scale, width * scale, height * scale)
+                await layer.fileMask.RenderAsync(maxSize * scale, width * scale, height * scale, false)
             }
             if(layer.blurMask instanceof Composition){
-                await layer.blurMask.RenderAsync(maxSize * scale, width * scale, height * scale)
+                await layer.blurMask.RenderAsync(maxSize * scale, width * scale, height * scale, false)
             }
         }
             
@@ -142,7 +144,9 @@ class Composition extends ListItem {
     
             copyCanvas(canvas, this.canvas)
             
-            this.CreateThumbnail(this.canvas)
+            if(createThumbnail){
+                this.CreateThumbnail(this.canvas)
+            }
     
             this.image = this.canvas
             this.version++

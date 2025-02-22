@@ -1,11 +1,8 @@
 
 import { Context } from "../gl/context";
-import { Composition, Manager } from "../modules/manager.svelte";
+import { Composition } from "../modules/manager.svelte";
 import { ImageFile } from "../modules/manager.svelte";
-import { hexToRgb } from "../lib/color";
 import { Pattern } from "../modules/pattern.svelte";
-import { Version } from "../lib/version";
-import { Mutex } from "../lib/mutex";
 
 class CompositionRenderer{
     constructor(canvas, ctx) {
