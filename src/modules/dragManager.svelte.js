@@ -122,12 +122,15 @@ class DragManager {
     return (event) => {
       event.preventDefault();
 
-      const tmpDropIndex = this.isDroppingAbove ? this.dropIndex : this.dropIndex-1;
+      this.isDroppingAbove = this.isTopHalf(event.target, event);
+      
       const tmpDraggingIndex = this.draggingIndex;
 
 
 
       if (dragData.menuSource != this.list.menuKind) {
+        const tmpDropIndex = this.isDroppingAbove ? this.dropIndex : this.dropIndex;
+
         this.dropIndex = null;
         this.draggingIndex = null;
         
@@ -145,6 +148,8 @@ class DragManager {
         this.dropIndex !== null &&
         this.draggingIndex !== this.dropIndex
       ) {
+        const tmpDropIndex = this.isDroppingAbove ? this.dropIndex : this.dropIndex-1;
+
         this.dropIndex = null;
         this.draggingIndex = null;
 
