@@ -14,7 +14,7 @@
   <details>
     <summary><h2>Project menu</h2></summary>
     <h3>The project menu allows you to save your projects</h3>
-    <p>You can also drop projects into the main window to load them</p> 
+    <p>You can also drop projects into the window to load them</p> 
     <img src="https://github.com/user-attachments/assets/0000dff0-5931-469c-bd5e-239ada979232"/>
     <hr/>
   </details>
