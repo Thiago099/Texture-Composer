@@ -4,7 +4,7 @@
 <p>This is a texture tool focused on automation</p>
 <p>Project files will contain all outputs used on it full resolution, lossless compressed</p>
 
-[Web app](https://thiago099.github.io/texture-composer/)
+[Web app](https://thiago099.github.io/texture-composer/)  (I'm publishing and testing it, when I remove this notice it is deployed and tested)
 
 <h3>Documentation</h3>
 <img src="https://github.com/user-attachments/assets/e891c5e8-a274-4a91-9846-5f649f6bad31"/>
