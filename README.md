@@ -151,6 +151,7 @@
       </details>
       <details>
         <summary>Noise properties</summary>
+        <p>You can double-click on a gradient map color pin in order to edit the color</p>
         <img src="https://github.com/user-attachments/assets/2d16fdb9-0587-48a7-955f-a7992361b7b5"/>
         <hr/>
       </details>
