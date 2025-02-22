@@ -2,7 +2,7 @@
 <h1>Texture Composer</h1>
 
 <p>This is a texture tool focused on automation</p>
-<p>Project files will contain all midias used on it full resolution, lossless compressed</p>
+<p>Project files will contain all outputs used on it full resolution, lossless compressed</p>
 
 [Web app](https://thiago099.github.io/texture-composer/)
 
@@ -44,7 +44,7 @@
   <details>
       <summary><h2>File list</h2></summary>
       <h3>You can click on each file in order to preview and edit it</h3>
-      <p>You can right click to rename a file</p> 
+      <p>You can right-click to rename a file</p> 
       <p>You can drag and drop the files in order to reorder them</p> 
       <p>You can also create folders on the file menu, The folders work like collapsible separator to your files</p> 
       <img src="https://github.com/user-attachments/assets/3859a979-205b-493d-a50d-b235c124d7fc"/>
@@ -53,7 +53,7 @@
   <details>
       <summary><h2>Layer list</h2></summary>
       <h3>When a composition is selected your layers will appear here</h3>
-      <p>You can right click to rename a layer</p> 
+      <p>You can right-click to rename a layer</p> 
       <p>You can drag and drop the layers in order to reorder them</p> 
       <p>The order of the layer list is important as lower layers will be rendered below</p> 
       <p>You can drag and drop any item from the file list into here or directly in the display panel</p> 
@@ -105,7 +105,7 @@
     <details>
       <summary>Mask</summary>
       <p>In the mask tab, you can tell which part of the composition mask file this layer will apply</p> 
-      <p>You can have an additional mask to the layer which is another file, which will be used as both luma and alpha mask</p> 
+      <p>You can have an additional mask to the layer which is another file, which will be used as both color and alpha mask</p> 
       <img src="https://github.com/user-attachments/assets/bc528b15-54c9-4c02-a34d-0a54101ba542"/>
       <hr/>
     </details>
@@ -122,6 +122,7 @@
       <p>In this tab you can add special effects to your layer, such as blur and gradient map</p> 
       <p>You can set up a custom masks to your blur which tells how much each part of your texture will be blurred</p> 
       <p>The gradient map and all colors in this program support alpha, which I found very useful for blending texture maps</p> 
+      <p>You can double-click on a gradient map color pin in order to edit the color</p>
       <img src="https://github.com/user-attachments/assets/34cdfa6c-f28a-4f04-85b5-41529ff082d2"/>
       <hr/>
     </details>
@@ -144,6 +145,7 @@
       </details>
       <details>
         <summary>Gradient properties</summary>
+        <p>You can double-click on a gradient map color pin in order to edit the color</p>
         <img src="https://github.com/user-attachments/assets/df31dde5-c682-4508-844f-1bf075d4bfc1"/>
         <hr/>
       </details>
@@ -158,7 +160,7 @@
 </details>
   <details>
     <summary><h1>View panel</h1></summary>
-    <p>Here you can see an low resolution preview of the current selected file</p> 
+    <p>Here you can see a low resolution preview of the current selected file</p> 
     <img src="https://github.com/user-attachments/assets/3860da2e-7311-48f7-9533-c13b378046bf"/>
     <hr/>
   </details>
@@ -170,14 +172,14 @@
 
 <h3>Running the source code</h3>
 
-Install nodejs
+Install Node.js
 
 on the root folder run once
 ```bash
 npm install
 ```
 
-every time to start the dev server you can run
+every time to start the dev server, you can run
 ```bash
 npm run dev
 ```
