@@ -20,7 +20,7 @@
     manager.selectedFile.selectedLayer.maskGroup = null
     manager.selectedFile.selectedLayer.blendMode = null
     manager.updateScreen()
-    oninput("reset all")
+    oninput("reset all")()
   }
   function resetAlpha(){
     manager.getSelectedLayer().ResetAlpha()

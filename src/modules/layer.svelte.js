@@ -97,7 +97,14 @@ class Layer extends ListItem{
         this.blendMode = null
         this.invert = false
         this.enableGradientMap = false
+        this.fileMask = null
+        this.blurMask = null
         this.gradientMapColors = []
+        this.horizontalAlignment = {name:"Center", value:1}
+        this.verticalAlignment = {name:"Center", value:1}
+        this.tile = true
+        this.xOffset = 0
+        this.yOffset = 0
     }
     CreateThumbnail(canvas){
         this.thumbnail = createThumbnail(canvas, {width:40, height:40})
