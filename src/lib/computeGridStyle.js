@@ -4,6 +4,9 @@ function computeGridStyle (gridElement) {
         return;
     }
 
+    gridElement.style.gridTemplateRows = null;
+    gridElement.style.gridTemplateColumns = null;
+
     const computedStyle = window.getComputedStyle(gridElement);
     const gridTemplateRows = computedStyle.getPropertyValue('grid-template-rows').trim();
     const gridTemplateColumns = computedStyle.getPropertyValue('grid-template-columns').trim();

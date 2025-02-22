@@ -20,9 +20,16 @@
   import ContextMenu from "./components/ContextMenu.svelte";
 
   onMount(async ()=>{
-
     let gridElement = document.querySelector('.grid-container');
-    computeGridStyle(gridElement)
+
+    function updateGridSize(){
+      computeGridStyle(gridElement)
+    }
+
+    updateGridSize()
+
+    window.addEventListener("resize", updateGridSize)
+    
     makeGridAreasResizable(gridElement,{
         thickness:"15px",
         minWidth: 30, 
