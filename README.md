@@ -2,9 +2,9 @@
 <h1>Texture Composer</h1>
 
 <p>This is a texture tool focused on automation</p>
-<p>Project files will contain all midias used on it full resolution, lossless compressed</p>
+<p>Project files will contain all outputs used on it full resolution, lossless compressed</p>
 
-[Web app](https://thiago099.github.io/texture-composer/)
+[Web app](https://thiago099.github.io/texture-composer/)  (I'm publishing and testing it, when I remove this notice it is deployed and tested)
 
 <h3>Documentation</h3>
 <img src="https://github.com/user-attachments/assets/e891c5e8-a274-4a91-9846-5f649f6bad31"/>
@@ -14,7 +14,7 @@
   <details>
     <summary><h2>Project menu</h2></summary>
     <h3>The project menu allows you to save your projects</h3>
-    <p>You can also drop projects into the main window to load them</p> 
+    <p>You can also drop projects into the window to load them</p> 
     <img src="https://github.com/user-attachments/assets/0000dff0-5931-469c-bd5e-239ada979232"/>
     <hr/>
   </details>
@@ -31,7 +31,7 @@
     <p>These files will have the maximum resolution possible</p> 
     <p>You can right-click on the name of each file to edit it</p> 
     <img src="https://github.com/user-attachments/assets/7994a46d-90aa-441f-9966-583e5c017702"/>
-    <h3>You can click on the edit button, in order to change the midias of each output</h3>
+    <h3>You can click on the edit button, in order to change the color and files of each output</h3>
     <img src="https://github.com/user-attachments/assets/ec133900-438f-4fc4-9920-56ee3f518e0b"/>
     <hr/>
   </details>
@@ -44,7 +44,7 @@
   <details>
       <summary><h2>File list</h2></summary>
       <h3>You can click on each file in order to preview and edit it</h3>
-      <p>You can right click to rename a file</p> 
+      <p>You can right-click to rename a file</p> 
       <p>You can drag and drop the files in order to reorder them</p> 
       <p>You can also create folders on the file menu, The folders work like collapsible separator to your files</p> 
       <img src="https://github.com/user-attachments/assets/3859a979-205b-493d-a50d-b235c124d7fc"/>
@@ -53,9 +53,9 @@
   <details>
       <summary><h2>Layer list</h2></summary>
       <h3>When a composition is selected your layers will appear here</h3>
-      <p>You can right click to rename a layer</p> 
+      <p>You can right-click to rename a layer</p> 
       <p>You can drag and drop the layers in order to reorder them</p> 
-      <p>The order of the layer list is important as lower layers will be rendered first</p> 
+      <p>The order of the layer list is important as lower layers will be rendered below</p> 
       <p>You can drag and drop any item from the file list into here or directly in the display panel</p> 
       <img src="https://github.com/user-attachments/assets/973229b5-6a0a-4987-b3f4-f056e0919961"/>
     <hr/>
@@ -66,9 +66,11 @@
     <p>You can click on any change in order to revert your project to that version</p> 
     <p>You can press CTRL+Z in order to revert the last change</p> 
     <p>You can press CTRL+Y in order to go to a newer version</p> 
+    <p>The render modal is not affected by the history</p> 
     <img src="https://github.com/user-attachments/assets/ac9d7253-0a3c-40aa-8789-521dbdf8c053"/>
     <hr/>
   </details>
+  <hr/>
 </details>
   <details>
     <summary><h1>Left panel</h1></summary>
@@ -103,7 +105,7 @@
     <details>
       <summary>Mask</summary>
       <p>In the mask tab, you can tell which part of the composition mask file this layer will apply</p> 
-      <p>You can have an additional mask to the layer which is another file, which will be used as both luma and alpha mask</p> 
+      <p>You can have an additional mask to the layer which is another file, which will be used as both color and alpha mask</p> 
       <img src="https://github.com/user-attachments/assets/bc528b15-54c9-4c02-a34d-0a54101ba542"/>
       <hr/>
     </details>
@@ -120,6 +122,7 @@
       <p>In this tab you can add special effects to your layer, such as blur and gradient map</p> 
       <p>You can set up a custom masks to your blur which tells how much each part of your texture will be blurred</p> 
       <p>The gradient map and all colors in this program support alpha, which I found very useful for blending texture maps</p> 
+      <p>You can double-click on a gradient map color pin in order to edit the color</p>
       <img src="https://github.com/user-attachments/assets/34cdfa6c-f28a-4f04-85b5-41529ff082d2"/>
       <hr/>
     </details>
@@ -142,11 +145,13 @@
       </details>
       <details>
         <summary>Gradient properties</summary>
+        <p>You can double-click on a gradient color pin in order to edit the color</p>
         <img src="https://github.com/user-attachments/assets/df31dde5-c682-4508-844f-1bf075d4bfc1"/>
         <hr/>
       </details>
       <details>
         <summary>Noise properties</summary>
+        <p>You can double-click on a gradient color pin in order to edit the color</p>
         <img src="https://github.com/user-attachments/assets/2d16fdb9-0587-48a7-955f-a7992361b7b5"/>
         <hr/>
       </details>
@@ -156,7 +161,7 @@
 </details>
   <details>
     <summary><h1>View panel</h1></summary>
-    <p>Here you can see an low resolution preview of the current selected file</p> 
+    <p>Here you can see a low resolution preview of the current selected file</p> 
     <img src="https://github.com/user-attachments/assets/3860da2e-7311-48f7-9533-c13b378046bf"/>
     <hr/>
   </details>
@@ -168,19 +173,19 @@
 
 <h3>Running the source code</h3>
 
-Install nodejs
+Install Node.js
 
 on the root folder run once
 ```bash
 npm install
 ```
 
-every time to start the dev server you can run
+every time to start the dev server, you can run
 ```bash
 npm run dev
 ```
 
-building for production
+building for production (See vite.config.js for outputs)
 ```bash
 npm run build
 ```
