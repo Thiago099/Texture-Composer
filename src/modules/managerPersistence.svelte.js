@@ -16,7 +16,7 @@ function UploadZipAsync() {
     return new Promise(resolve=>{
         const input = document.createElement("input");
         input.type = "file";
-        input.accept = ".textureComposer.zip";
+        input.accept = ".tcx";
         input.style.display = "none";
       
         input.addEventListener("change", (e) => resolve(e.target.files[0]));
@@ -257,7 +257,7 @@ class ManagerPersistence {
         outputs, 
         colorHistory
     })
-    writter.Download(fileName + ".textureComposer.zip")
+    writter.Download(fileName + ".tcx")
 
   }
   static Load(file = null) {
