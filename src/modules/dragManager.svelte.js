@@ -158,7 +158,7 @@ class DragManager {
 
         this.list.items.splice(tmpDropIndex+1, 0, draggedItem);
 
-        this.list.selectedItem = this.list.items[tmpDropIndex+1];
+        // this.list.selectedItem = this.list.items[tmpDropIndex+1];
         this.io.reorderEvent(this.list.selectedItem)
       }
 
