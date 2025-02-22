@@ -9,9 +9,9 @@
   
   <details>
     <summary>Project menu</summary>
-    <h3>The project menu allows you to save your projects</h3>
-    <p>They are zip files wich contain all your media and configurations</p>
-    <img src="https://github.com/user-attachments/assets/15417e3a-2006-4809-b26b-0b799f0b0c04"/>
+    <h3>&nbsp;The project menu allows you to save your projects</h3>
+    <p>&nbsp;They are zip files wich contain all your media and configurations</p>
+    &nbsp;<img src="https://github.com/user-attachments/assets/15417e3a-2006-4809-b26b-0b799f0b0c04"/>
   </details>
 </details>
 
