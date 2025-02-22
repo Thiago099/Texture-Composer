@@ -31,7 +31,7 @@
     <p>These files will have the maximum resolution possible</p> 
     <p>You can right-click on the name of each file to edit it</p> 
     <img src="https://github.com/user-attachments/assets/7994a46d-90aa-441f-9966-583e5c017702"/>
-    <h3>You can click on the edit button, in order to change the midias of each output</h3>
+    <h3>You can click on the edit button, in order to change the color and files of each output</h3>
     <img src="https://github.com/user-attachments/assets/ec133900-438f-4fc4-9920-56ee3f518e0b"/>
     <hr/>
   </details>
