@@ -1,5 +1,6 @@
 <details>
-  <summary>Main window</summary>
+  <summary>Editor</summary>
+  <h3>This is the main page, and below ill list all of its features</h3>
   <img src="https://github.com/user-attachments/assets/093dbbe4-7b19-48c4-8fa5-cec6f0da3d81"/>
 </details>
 
