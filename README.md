@@ -185,7 +185,7 @@ every time to start the dev server, you can run
 npm run dev
 ```
 
-building for production
+building for production (See vite.config.js for outputs)
 ```bash
 npm run build
 ```
