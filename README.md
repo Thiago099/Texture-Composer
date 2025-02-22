@@ -70,6 +70,7 @@
     <img src="https://github.com/user-attachments/assets/ac9d7253-0a3c-40aa-8789-521dbdf8c053"/>
     <hr/>
   </details>
+  <hr/>
 </details>
   <details>
     <summary><h1>Left panel</h1></summary>
