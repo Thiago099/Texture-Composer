@@ -55,7 +55,7 @@
       <h3>When a composition is selected your layers will appear here</h3>
       <p>You can right click to rename a layer</p> 
       <p>You can drag and drop the layers in order to reorder them</p> 
-      <p>The order of the layer list is important as lower layers will be rendered first</p> 
+      <p>The order of the layer list is important as lower layers will be rendered below</p> 
       <p>You can drag and drop any item from the file list into here or directly in the display panel</p> 
       <img src="https://github.com/user-attachments/assets/973229b5-6a0a-4987-b3f4-f056e0919961"/>
     <hr/>
