@@ -82,10 +82,6 @@ function prevent(e){
       <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div
       class="drop-indicator {(dragManager.isDraggingOver && index == dragManager.dropIndex && dragManager.draggingIndex != dragManager.dropIndex && dragManager.draggingIndex != dragManager.dropIndex+1  ?  "active" : "drop-indicator")}"
-      ondragover={dragManager.dragOverHandle(index)}
-      ondragleave={dragManager.handleDragLeave()}
-      ondrop={dragManager.handleDrop()}
-      ondragend={dragManager.handleDragEnd()}
     >
     </div>
     {/if}
@@ -204,5 +200,7 @@ function prevent(e){
   flex: 1;
 }
 
-
+.drop-indicator{
+  pointer-events: none;
+}
 </style>

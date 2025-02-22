@@ -126,10 +126,10 @@ class DragManager {
       
       const tmpDraggingIndex = this.draggingIndex;
 
-
+      
 
       if (dragData.menuSource != this.list.menuKind) {
-        const tmpDropIndex = this.isDroppingAbove ? this.dropIndex : this.dropIndex;
+        const tmpDropIndex = this.dropIndex;
 
         this.dropIndex = null;
         this.draggingIndex = null;
