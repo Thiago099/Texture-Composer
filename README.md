@@ -1,4 +1,3 @@
-![image](https://github.com/user-attachments/assets/3860da2e-7311-48f7-9533-c13b378046bf)
 
 <h1>Texture Composer</h1>
 
@@ -151,6 +150,13 @@
       </details>
     <hr/>
   </details>
+  <details>
+    <summary><h1>View panel</h1></summary>
+    <p>Here you can see an low resolution preview of the current selected file</p> 
+    <p>You can drop images here in order to upload them, they will go into the top of the files list</p> 
+    <img src="https://github.com/user-attachments/assets/3860da2e-7311-48f7-9533-c13b378046bf"/>
+    <hr/>
+  </details>
   <hr/>
 </details>
 
@@ -160,8 +166,6 @@
 <p>This decision is so you can generate variants with different resolutions</p>
 
 <h3>Running the source code</h3>
-
-How to run:
 
 Install nodejs
 
