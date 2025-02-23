@@ -36,7 +36,6 @@ const confirmManager = ConfirmModalManager.GetSingleton()
       <button class="button full"  onclick={renderManager.CopyEvent(renderManager.selectedOutput)}><i class="fa-solid fa-copy"></i> Duplicate</button>
       <button class="button full"  onclick={()=>confirmManager.Prompt("Are you sure you want to remove this output",()=>renderManager.RemoveOutput(renderManager.selectedOutput))}><i class="fa-solid fa-trash"></i> Remove</button>
       <Button action={()=>confirmManager.Prompt("Are you sure you want to reset this output",()=>renderManager.selectedOutput.Load())}><i class="fa-solid fa-broom"></i> Clean and Update</Button>
-      <Button action={()=>renderManager.selectedOutput.UpdatePreview()}><i class="fa-solid fa-arrows-rotate"></i> Update</Button>
     </div>
     {#if renderManager.selectedOutput.preview}
       <img class="h-margin preview" src={renderManager.selectedOutput.preview} alt="thumb"/> 
