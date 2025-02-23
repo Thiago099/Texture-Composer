@@ -90,13 +90,15 @@ class Composition extends ListItem {
         this.colors = getUniqueColors(this.file.image)
     }
     CalculateSize(source, width, height){
+        debugger
         
         let mask = this
+        let last = this
 
         do{
             mask = source.GetFile(mask.file ?? mask.layers.at(-1)?.file)
         }
-        while(mask instanceof Composition)
+        while(mask instanceof Composition && last != this)
 
         if(mask && !(mask instanceof Pattern)){
             width = mask.image.width

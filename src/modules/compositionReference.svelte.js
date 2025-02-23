@@ -2,8 +2,7 @@ import { hexToRgba, rgbaToHex } from "../lib/color"
 import { guid } from "../lib/guid"
 import { copyCanvas, createThumbnail } from "../lib/image-generation"
 import { Composition } from "./composition.svelte"
-import { ListIO, ListItem } from "./listManager.svelte"
-import { Pattern } from "./pattern.svelte"
+import { ListItem } from "./listManager.svelte"
 
 class CompositionColorSwap{
     color = $state(null)

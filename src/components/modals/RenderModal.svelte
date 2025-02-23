@@ -24,9 +24,6 @@ const confirmManager = ConfirmModalManager.GetSingleton()
 
       <div class="column margin-bottom-60">
         <label>Name</label>
-        <div class="full-width-margin">
-          <Text bind:value={renderManager.selectedOutput.name}></Text>
-        </div>
         <label>Base Composition</label>
         <div class="full-width-margin">
           <FileSelect filter={x=>x instanceof Composition} bind:value={renderManager.selectedOutput.base} oninput={()=>{renderManager.selectedOutput.name = renderManager.selectedOutput.base?.name;renderManager.selectedOutput.Load()}}></FileSelect>
@@ -47,7 +44,7 @@ const confirmManager = ConfirmModalManager.GetSingleton()
     {#each renderManager.selectedOutput.files as item}
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div class="item">
-      <FileSelect filter={x=>!x.Contains(manager.selectedFile)} bind:value={item.file} oninput={()=>renderManager.selectedOutput.UpdatePreview()}></FileSelect>
+      <FileSelect filter={x=>!x.Contains(renderManager.selectedOutput.base)} bind:value={item.file} oninput={()=>renderManager.selectedOutput.UpdatePreview()}></FileSelect>
     </div>
     {/each}
   </div>
