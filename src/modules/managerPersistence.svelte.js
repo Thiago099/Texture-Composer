@@ -244,6 +244,7 @@ class ManagerPersistence {
         outputs.push({
             files,
             colors,
+            enabled: item.enabled,
             name: item.name,
             id: item.id,
             base: item.base.id
@@ -410,6 +411,7 @@ class ManagerPersistence {
                 const output = new CompositionReference()
                 output.id = item.id
                 output.name = item.name
+                output.enabled = item.enabled ?? true
                 output.base = fileDict[item.base]
 
                 output.thumbnail = await zip.GetImageDataUrl(output.id + "_thumb.png")
