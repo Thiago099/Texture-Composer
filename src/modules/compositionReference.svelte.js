@@ -64,6 +64,11 @@ class CompositionReference extends ListItem{
         this.BuildFileCache()
 
         async function Render(comp, maxSize, originalWidth=null, originalHeight=null){
+
+            if(comp == null){
+                return
+            }
+
             const [width, height] = comp.CalculateSize(self, originalWidth, originalHeight)
 
             if(maxSize === null){
