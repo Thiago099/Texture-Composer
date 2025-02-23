@@ -90,7 +90,6 @@ class Composition extends ListItem {
         this.colors = getUniqueColors(this.file.image)
     }
     CalculateSize(source, width, height){
-        debugger
         
         let mask = this
         let last = this

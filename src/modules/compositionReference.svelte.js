@@ -141,8 +141,8 @@ class CompositionReference extends ListItem{
         return color
     }
     Load(){
-        this.files = this.base.GetUniqueFiles()?.map(x=>new CompositionTextureSwap(x))
-        this.colors = this.base.GetUniqueColors()?.map(x=>new CompositionColorSwap(x))
+        this.files = this.base?.GetUniqueFiles()?.map(x=>new CompositionTextureSwap(x))??[]
+        this.colors = this.base?.GetUniqueColors()?.map(x=>new CompositionColorSwap(x))??[]
         this.UpdatePreview()
     }
     Copy(){
@@ -158,8 +158,8 @@ class CompositionReference extends ListItem{
     }
     async UpdatePreview(){
         await this.Render(500)
-        const canvas = this.base.renderingContext.GetCanvas(this.base)
-        if(this.base.thumbnail){
+        const canvas = this.base?.renderingContext.GetCanvas(this.base)
+        if(canvas){
             this.thumbnail = await createThumbnail(canvas,{width:40, height:40})
             this.preview = canvas.toDataURL("image/png")
         }

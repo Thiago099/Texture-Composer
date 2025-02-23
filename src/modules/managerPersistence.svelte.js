@@ -247,7 +247,7 @@ class ManagerPersistence {
             enabled: item.enabled,
             name: item.name,
             id: item.id,
-            base: item.base.id
+            base: item.base?.id
         })
     }
     const colorPicker = ColorPicker.GetSingleton()

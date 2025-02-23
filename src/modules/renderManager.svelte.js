@@ -51,7 +51,7 @@ class RenderManager{
     }
     async RenderOutput(output){
         await output.Render()
-        const dataURL = output.base.outputCanvas.toDataURL('image/png');
+        const dataURL = output.base?.outputCanvas.toDataURL('image/png');
         return dataURL
     }
 
@@ -79,21 +79,29 @@ class RenderManager{
 
 
         const enabledOutputs = this.outputs.filter(x=>x.enabled)
-        if(enabledOutputs.length == 1){
+        
+        const renderedOutputs = []
+        for(const item of enabledOutputs){
+            const image = await this.RenderOutput(item)
+            if(image != null){
+                renderedOutputs.push({image, name:item.name})
+            }
+        }
+        if(renderedOutputs.length == 1){
 
-            saveModalManager.Prompt("Render Asset", enabledOutputs[0].name , async fileName =>{
+            saveModalManager.Prompt("Render Asset", renderedOutputs[0].name , async fileName =>{
                 const link = document.createElement('a');
-                link.href = await this.RenderOutput(enabledOutputs[0]);
+                link.href =  renderedOutputs[0].image;
                 link.download = fileName + '.png';
                 link.click();
             })
             
         }
-        else if (enabledOutputs.length > 0){
+        else if (renderedOutputs.length > 0){
             saveModalManager.Prompt("Render Assets", manager.projectName + " Assets" , async fileName =>{
                 const writer = new ZipWriter()
-                for(const output of enabledOutputs){
-                    writer.WriteImage(output.name+".png", await this.RenderOutput(output))
+                for(const output of renderedOutputs){
+                    writer.WriteImage(output.name+".png", output.image)
                 }
                 writer.Download(fileName)
             })

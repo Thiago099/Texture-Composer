@@ -65,10 +65,11 @@ class CompositionRenderer{
 
         if(composition.file){
             const maskTextureFile = fileSource.GetFile(composition.file)
+            if(maskTextureFile){
+                this.maskTexture.SetDataFromImage(maskTextureFile.image)
+                this.maskTexture.SetRenderScale(size.maxSize)
+            }
 
-            this.maskTexture.SetDataFromImage(maskTextureFile.image)
-
-            this.maskTexture.SetRenderScale(size.maxSize)
         }
 
         this.ctx.SetSize(size)
@@ -119,9 +120,11 @@ class CompositionRenderer{
                         await fileMask.Render(this.ctx.canvas.width * patternScale, this.ctx.canvas.height * patternScale, false, fileSource)
                     }
 
-                    this.fileMaskTexture.SetDataFromImage(fileMask.image)
+                    if(fileMask){
+                        this.fileMaskTexture.SetDataFromImage(fileMask.image)
+                        this.fileMaskTexture.SetRenderScale(size.maxSize)
+                    }
 
-                    this.fileMaskTexture.SetRenderScale(size.maxSize)
 
                 }
                 else{
@@ -139,9 +142,10 @@ class CompositionRenderer{
                         await blurMask.Render(this.ctx.canvas.width * patternScale, this.ctx.canvas.height*patternScale, false, fileSource)
                     }
 
-                    this.blurMaskTexture.SetDataFromImage(blurMask.image)
-
-                    this.blurMaskTexture.SetRenderScale(size.maxSize)
+                    if(blurMask){
+                        this.blurMaskTexture.SetDataFromImage(blurMask.image)
+                        this.blurMaskTexture.SetRenderScale(size.maxSize)
+                    }
 
                 }
                 else{
@@ -194,9 +198,11 @@ class CompositionRenderer{
                     await targetFile.Render(this.ctx.canvas.width * patternScale, this.ctx.canvas.height * patternScale, false, fileSource)
                 }
 
-                this.groupTexture.SetDataFromImage(targetFile.image)
+                if(targetFile){
+                    this.groupTexture.SetDataFromImage(targetFile.image)
+                    this.groupTexture.SetRenderScale(size.maxSize)
+                }
                 
-                this.groupTexture.SetRenderScale(size.maxSize)
 
                 if(item.maskGroup){
                     this.ctx.GetUniform("u_mask_color").SetFloat3(...item.maskGroup.map(x=>x/255))
