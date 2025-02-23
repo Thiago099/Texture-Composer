@@ -84,7 +84,7 @@ class RenderManager{
             saveModalManager.Prompt("Render Asset", enabledOutputs[0].name , async fileName =>{
                 const link = document.createElement('a');
                 link.href = await this.RenderOutput(enabledOutputs[0]);
-                link.download = manager.projectName + '.png';
+                link.download = fileName + '.png';
                 link.click();
             })
             
