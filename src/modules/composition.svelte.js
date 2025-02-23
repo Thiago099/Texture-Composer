@@ -97,7 +97,7 @@ class Composition extends ListItem {
         do{
             mask = source.GetFile(mask.file ?? mask.layers.at(-1)?.file)
         }
-        while(mask instanceof Composition && last != this)
+        while(mask instanceof Composition && last != mask)
 
         if(mask && !(mask instanceof Pattern)){
             width = mask.image.width

@@ -99,6 +99,7 @@ class Layer extends ListItem{
         this.fileMask = null
         this.blurMask = null
         this.gradientMapColors = []
+        
         this.horizontalAlignment = {name:"Center", value:1}
         this.verticalAlignment = {name:"Center", value:1}
         this.tile = true
@@ -112,6 +113,7 @@ class Layer extends ListItem{
         this.enableH = false
         this.enableS = false
         this.enableV = false
+        
     }
     CreateThumbnail(canvas){
         this.thumbnail = createThumbnail(canvas, {width:40, height:40})
@@ -153,6 +155,13 @@ class Layer extends ListItem{
         result.enableH = this.enableH
         result.enableS = this.enableS
         result.enableV = this.enableV
+
+        result.horizontalAlignment = this.horizontalAlignment
+        result.verticalAlignment = this.verticalAlignment 
+        result.tile = this.tile 
+        result.xOffset = this.xOffset 
+        result.yOffset = this.yOffset 
+
         return result
     }
     RenderAsync(maxSize){
