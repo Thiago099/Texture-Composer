@@ -17,16 +17,16 @@
     {#key manager.selectedFile}
     {#key manager.historyIndex}
       <label>Mask File</label>
-      <File bind:value={manager.selectedFile.file} filter={x=>!x.Contains(manager.selectedFile)} oninput={()=>{manager.selectedFile?.GenerateMask();manager.updateScreen();manager.pushHistory("set mask")}}></File>
+      <File bind:value={manager.selectedFile.file} filter={x=>!x.Contains(manager.selectedFile)} oninput={()=>{manager.selectedFile?.GenerateMask();manager.updateScreen();}}></File>
     {/key}
     {/key}
  </div>
   {#snippet normal()}
   <label>Convert to normal</label>
-  <Toggle bind:value={manager.selectedFile.convertToNormal} oninput={()=>{manager.updateScreen();manager.pushHistory("toggle normal conversion")}}>Convert to normal</Toggle>
+  <Toggle bind:value={manager.selectedFile.convertToNormal} oninput={()=>{manager.updateScreen();}}>Convert to normal</Toggle>
   {#if manager.selectedFile.convertToNormal}
   <label>Normal Strength</label>
-  <Range bind:value={manager.selectedFile.normalStrength} reset={()=>manager.selectedFile.normalStrength = 10} min={0} max={30} step={0.1} oninput={()=>{manager.updateScreen();manager.pushHistory("normal strength")}}></Range>
+  <Range bind:value={manager.selectedFile.normalStrength} reset={()=>manager.selectedFile.normalStrength = 10} min={0} max={30} step={0.1} oninput={()=>{manager.updateScreen();}}></Range>
   {/if}
   {/snippet}
 
@@ -34,7 +34,7 @@
   {#key manager.historyIndex}
 
   <label>Mask File</label>
-  <File bind:value={manager.selectedFile.file} filter={x=>!x.Contains(manager.selectedFile)} oninput={()=>{manager.selectedFile?.GenerateMask();manager.updateScreen();manager.pushHistory("set mask")}}></File>
+  <File bind:value={manager.selectedFile.file} filter={x=>!x.Contains(manager.selectedFile)} oninput={()=>{manager.selectedFile?.GenerateMask();manager.updateScreen();}}></File>
   <label>Layer files</label>
   {#each manager.selectedFile.GetUniqueFiles() as item (item)}
     {#if item != manager.selectedFile.file}
@@ -47,7 +47,7 @@
           <i class="fa-solid fa-layer-group h-margin" style="font-size: 3em;"></i>
         {/if}
           <!-- svelte-ignore a11y_click_events_have_key_events -->
-      <File bind:value={item.file}  filter={x=>!x.Contains(manager.selectedFile)}  oninput={(newFile)=>{ manager.selectedFile.ReplaceFile(item, newFile);manager.updateScreen();manager.selectedFile.updateAllLayers();manager.pushHistory("replace texture")}}></File>
+      <File bind:value={item.file}  filter={x=>!x.Contains(manager.selectedFile)}  oninput={(newFile)=>{ manager.selectedFile.ReplaceFile(item, newFile);manager.updateScreen();manager.selectedFile.updateAllLayers();}}></File>
       </div>
     {/if}
   {/each}

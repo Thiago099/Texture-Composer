@@ -43,7 +43,6 @@
 
     manager.updateScreen()
     Data.dragData = null
-    manager.pushHistory("add layer")
 }
 
 

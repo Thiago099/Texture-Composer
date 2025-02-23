@@ -51,7 +51,6 @@ class Manager{
         const item = new Composition(this.GetAvailableName("Composition"));
         this.files.splice(0,0,item)
         this.selectFile(item)
-        this.pushHistory("add composition")
     }
     getFolder(index){
 
@@ -83,43 +82,36 @@ class Manager{
     addFolder(){
         const item = new Folder(this.GetAvailableName("Folder"));
         this.files.push(item)
-        this.pushHistory("add folder")
     }
     addColor(){
         const item = new Pattern(this.GetAvailableName("Color"));
         this.files.splice(0,0,item)
         this.selectFile(item)
-        this.pushHistory("add pattern")
     }
     addLinearGradient(){
         const item = new Pattern(this.GetAvailableName("Linear Gradient"), { name: "Linear Gradient", value: "linearGradient" });
         this.files.splice(0,0,item)
         this.selectFile(item)
-        this.pushHistory("add pattern")
     }
     addRadialGradient(){
         const item = new Pattern(this.GetAvailableName("Radial Gradient"), { name: "Radial Gradient", value: "radialGradient" });
         this.files.splice(0,0,item)
         this.selectFile(item)
-        this.pushHistory("add pattern")
     }
     addPerlinNoise(){
         const item = new Pattern(this.GetAvailableName("Perlin Noise"),  { name: "Perlin Noise", value: "perlinNoise" });
         this.files.splice(0,0,item)
         this.selectFile(item)
-        this.pushHistory("add pattern")
     }
     addVoronoiNoise(){
         const item = new Pattern(this.GetAvailableName("Voronoi Noise"),  { name: "Voronoi Noise", value: "voronoiNoise" });
         this.files.splice(0,0,item)
         this.selectFile(item)
-        this.pushHistory("add pattern")
     }
     addGrainNoise(){
         const item = new Pattern(this.GetAvailableName("Grain Noise"),  { name: "Grain Noise", value: "grainNoise" });
         this.files.splice(0,0,item)
         this.selectFile(item)
-        this.pushHistory("add pattern")
     }
     addImage(file, image){
         this.files.splice(0,0,new ImageFile(file.name, image))
@@ -135,35 +127,6 @@ class Manager{
     }
     isCompositionActive(){
         return this.selectedFile instanceof Composition
-    }
-    pushHistory(action){
-
-        const last = this.history[this.historyIndex]
-
-        if(last && last.action == action && last.files.indexOf(last.selectedFile) == this.getSelectedFileIndex()){
-        }
-        else{
-            if(this.history.length > 30){
-                this.history.splice(0, 1)
-            }
-            else{
-                this.historyIndex++
-            }
-        }
-
-        this.history.splice(this.historyIndex, this.history.length-this.historyIndex)
-
-
-        const files = []
-        for(const file of this.files){
-            files.push(file.Copy())
-        }
-        const selectedFile = files[this.getSelectedFileIndex()]
-        this.history.push({
-            action,
-            files,
-            selectedFile,
-        })
     }
     getSelectedFileIndex(){
         return this.files.indexOf(this.selectedFile)
@@ -197,40 +160,6 @@ class Manager{
             }
         }
     }
-    setHistory(index){
-        if(index < 0){
-            return
-        }
-        if(index >= this.history.length){
-            return
-        }
-        this.historyIndex = index
-        const current = this.history[this.historyIndex]
-        this.files = current.files.map(x=>x.Copy())
-        this.selectedFileHistory = []
-        this.selectedFile = this.files[current.files.indexOf(current.selectedFile)]
-    }
-    undoHistory(){
-        if(this.historyIndex-1 < 0){
-            return
-        }
-        this.historyIndex--
-        const current = this.history[this.historyIndex]
-        this.files = current.files.map(x=>x.Copy())
-        this.selectedFileHistory = []
-        this.selectedFile = this.files[current.files.indexOf(current.selectedFile)]
-    }
-    redoHistory(){
-        if(this.historyIndex + 1 >= this.history.length){
-            return
-        }
-        this.historyIndex++
-        const current = this.history[this.historyIndex]
-        this.files = current.files.map(x=>x.Copy())
-        this.selectedFileHistory = []
-        this.selectedFile = this.files[current.files.indexOf(current.selectedFile)]
-    }
-
 }
 
 

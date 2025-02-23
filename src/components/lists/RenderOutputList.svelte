@@ -23,7 +23,6 @@
       }
       manager.selectedFile.AddLayer(index, data.item)
       manager.updateScreen()
-      manager.pushHistory("add layer")
     }
   }
 
@@ -50,7 +49,6 @@
       }
 
       manager.updateScreen()
-      manager.pushHistory("remove layer")
     })
   }
 

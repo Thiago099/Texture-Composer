@@ -61,7 +61,7 @@ function prevent(e){
         >
         {#if item.editName && list.allowRenaming}
         <div onmousedown={prevent} style="width:100%">
-          <input class="rename-input" type="text" bind:value={item.name}  onblur={()=>{item.editName = false;manager.pushHistory("name update")}}  onkeydown={e => e.key === "Enter" && e.target.blur()}  autofocus >
+          <input class="rename-input" type="text" bind:value={item.name}  onblur={()=>{item.editName = false;}}  onkeydown={e => e.key === "Enter" && e.target.blur()}  autofocus >
         </div>
         {:else}
           {@render rendering.renderFunction(item, index)} 

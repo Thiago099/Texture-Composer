@@ -59,7 +59,6 @@
   function oninput(action){
     return ()=>{
       manager.updateScreen()
-      manager.pushHistory(action)
     }
   }
 

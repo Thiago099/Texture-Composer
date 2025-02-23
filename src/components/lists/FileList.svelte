@@ -53,9 +53,6 @@
       }
       manager.updateScreen()
     }
-
-
-    manager.pushHistory("remove file")
   })
 }
 

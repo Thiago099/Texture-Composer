@@ -439,8 +439,6 @@ class ManagerPersistence {
 
         const colorPicker = ColorPicker.GetSingleton()
         colorPicker.colorHistory = data.colorHistory
-
-        manager.pushHistory("load project")
     })
   }
 }

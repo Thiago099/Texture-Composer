@@ -28,7 +28,6 @@ function uploadMedias(){
         LoadImage(file).then((image)=>{
           if(image){
             manager.addImage(file, image)
-            manager.pushHistory("add file")
           }
         })
       }

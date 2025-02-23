@@ -39,18 +39,7 @@
 
 
   })
-  const manager = Manager.GetSingleton()
 
-  document.addEventListener('keydown', function (event) {
-    if (event.ctrlKey && event.key === 'z') {
-        event.preventDefault();
-        manager.undoHistory()
-      }
-    if (event.ctrlKey && event.key === 'y') {
-        event.preventDefault();
-        manager.redoHistory()
-      }
-});
 </script>
 
   
