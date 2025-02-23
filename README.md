@@ -39,7 +39,7 @@
 </details>
 <details>
   <summary><h1>Right panel</h1></summary>
-  <h3>The right panel contains your files, the layer list and your change history</h3>
+  <h3>The right panel contains your files, the layer list</h3>
   <img src="https://github.com/user-attachments/assets/f604f3b1-b600-4f78-a46b-b6e18ec104a9"/>
   <details>
       <summary><h2>File list</h2></summary>
@@ -58,20 +58,10 @@
       <p>The order of the layer list is important as lower layers will be rendered below</p> 
       <p>You can drag and drop any item from the file list into here or directly in the display panel</p> 
       <img src="https://github.com/user-attachments/assets/973229b5-6a0a-4987-b3f4-f056e0919961"/>
+      <hr/>
+  </details>
     <hr/>
   </details>
-  <details>
-    <summary><h2>History list</h2></summary>
-    <h3>The history list contains all your changes</h3>
-    <p>You can click on any change in order to revert your project to that version</p> 
-    <p>You can press CTRL+Z in order to revert the last change</p> 
-    <p>You can press CTRL+Y in order to go to a newer version</p> 
-    <p>The render modal is not affected by the history</p> 
-    <img src="https://github.com/user-attachments/assets/ac9d7253-0a3c-40aa-8789-521dbdf8c053"/>
-    <hr/>
-  </details>
-  <hr/>
-</details>
   <details>
     <summary><h1>Left panel</h1></summary>
     <h3>The left panel contains the properties to all the selected files</h3>
