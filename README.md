@@ -71,7 +71,7 @@
       <p>The mask file, is an ID map that can be used by the layers to display texture on certain areas</p> 
       <p>The normal output will use a shader to convert the composition final output to a normal map</p> 
       <p>The texture swap tab allows you to easily swap any textures used by your composition</p> 
-      <img src="https://github.com/user-attachments/assets/ba07a4f2-7a60-49be-aa0e-b117ef540abc"/>
+      <img src="https://github.com/user-attachments/assets/2d7ce541-f40c-42d8-a4e0-1ad22a0f0ff1"/>
       <hr/>
   </details>
   <details>
