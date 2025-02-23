@@ -209,7 +209,7 @@ class Composition extends ListItem {
                     result.add(item)
                 }
             }
-            if(layer.blurMask instanceof Pattern ||layer.fileMask instanceof Composition ){
+            if(layer.blurMask instanceof Pattern || layer.blurMask instanceof Composition ){
                 for(const item of layer.blurMask.GetUniqueColors()){
                     result.add(item)
                 }
