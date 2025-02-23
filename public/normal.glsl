@@ -30,11 +30,12 @@ vec3 computeNormalFromHeightMap(sampler2D heightMap, vec2 uv, float scale, vec2 
     float dy = (heightU - heightD) * scale;
     
     if(u_direct_x_normal){
-        vec3 normal = normalize(vec3(-dx, dy, 1.0));
+        vec3 normal = normalize(vec3(-dx, -dy, 1.0));
         return normal;
     }
     else{
-        vec3 normal = normalize(vec3(-dx, -dy, 1.0));
+
+        vec3 normal = normalize(vec3(-dx, dy, 1.0));
         return normal;
     }
 
