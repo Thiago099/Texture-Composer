@@ -113,6 +113,7 @@
       <p>You can set up a custom masks to your blur which tells how much each part of your texture will be blurred</p> 
       <p>The gradient map and all colors in this program support alpha, which I found very useful for blending texture maps</p> 
       <p>You can double-click on a gradient map color pin in order to edit the color</p>
+       <p>Right-click on the pin to remove it, or drag it far away from the gradient to remove it</p>
       <img src="https://github.com/user-attachments/assets/34cdfa6c-f28a-4f04-85b5-41529ff082d2"/>
       <hr/>
     </details>
@@ -136,12 +137,14 @@
       <details>
         <summary>Gradient properties</summary>
         <p>You can double-click on a gradient color pin in order to edit the color</p>
+        <p>Right-click on the pin to remove it, or drag it far away from the gradient to remove it</p>
         <img src="https://github.com/user-attachments/assets/df31dde5-c682-4508-844f-1bf075d4bfc1"/>
         <hr/>
       </details>
       <details>
         <summary>Noise properties</summary>
         <p>You can double-click on a gradient color pin in order to edit the color</p>
+         <p>Right-click on the pin to remove it, or drag it far away from the gradient to remove it</p>
         <img src="https://github.com/user-attachments/assets/2d16fdb9-0587-48a7-955f-a7992361b7b5"/>
         <hr/>
       </details>
