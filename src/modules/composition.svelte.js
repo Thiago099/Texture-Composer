@@ -27,6 +27,7 @@ class Composition extends ListItem {
 
     version = 1
     convertToNormal = $state(false)
+    directXNormal = $state(true)
     normalStrength = $state(10)
 
     constructor(name) {
@@ -69,6 +70,7 @@ class Composition extends ListItem {
         result.name = this.name
         result.image = this.image
         result.convertToNormal = this.convertToNormal
+        result.directXNormal = this.directXNormal
         result.normalStrength = this.normalStrength
         result.selectedLayer = result.layers[this.layers.indexOf(this.selectedLayer)]
         return result

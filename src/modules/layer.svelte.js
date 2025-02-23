@@ -4,7 +4,6 @@ import { copyCanvas, createThumbnail } from "../lib/image-generation";
 import { Composition } from "./composition.svelte";
 import { guid } from "../lib/guid";
 import { Manager } from "./manager.svelte";
-import { createNormalRenderer } from "../application/normalRenderer.svelte";
 
 import { RenderingContext } from "./renderingContext.svelte";
 class Layer extends ListItem{

@@ -39,7 +39,7 @@ class RenderingContext{
         await this.renderTarget.renderer.Render(composition, layers, showHidden, size, fileSource)
 
         if(this.enablePostProcessing && composition.convertToNormal){
-            await this.normalRenderTarget.renderer.Render(this.renderTarget.canvas, composition.normalStrength , size.maxSize)
+            await this.normalRenderTarget.renderer.Render(this.renderTarget.canvas, composition.normalStrength, size.maxSize, composition.directXNormal)
         }
     }
     GetCanvas(composition){

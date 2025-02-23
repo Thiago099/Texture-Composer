@@ -33,11 +33,12 @@ class NormalRenderer{
 
     }
 
-    async Render(image, radius, maxSize){
+    async Render(image, radius, maxSize, directXNormal){
         this.groupTexture.SetDataFromImage(image)
         this.groupTexture.SetRenderScale(maxSize)
         this.ctx.FitTexture(this.groupTexture, maxSize)
         this.ctx.GetUniform("u_normal_strength").SetFloat(radius)
+        this.ctx.GetUniform("u_direct_x_normal").SetInt(directXNormal ? 1 : 0)
         this.ctx.GetUniform("resolution").SetFloat2(this.ctx.canvas.width, this.ctx.canvas.height)
         this.ctx.Clear()
         this.ctx.RenderTriangleStrip(4)

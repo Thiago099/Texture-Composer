@@ -17,6 +17,7 @@ uniform float u_normal_strength;
 uniform vec2 resolution;
 uniform sampler2D u_group_texture;
 uniform vec2 u_group_texture_ratio;
+uniform bool u_direct_x_normal;
 
 vec3 computeNormalFromHeightMap(sampler2D heightMap, vec2 uv, float scale, vec2 texelSize) {
     
@@ -28,15 +29,24 @@ vec3 computeNormalFromHeightMap(sampler2D heightMap, vec2 uv, float scale, vec2 
     float dx = (heightR - heightL) * scale;
     float dy = (heightU - heightD) * scale;
     
-    vec3 normal = normalize(vec3(-dx, -dy, 1.0));
+    if(u_direct_x_normal){
+        vec3 normal = normalize(vec3(-dx, dy, 1.0));
+        return normal;
+    }
+    else{
+        vec3 normal = normalize(vec3(-dx, -dy, 1.0));
+        return normal;
+    }
 
-    return normal;
 }
 
 
 void main() {
     vec2 texelSize = 1.0  / vec2(textureSize(u_group_texture, 0));
     vec3 normal = computeNormalFromHeightMap(u_group_texture, v_texCoord, u_normal_strength, texelSize);
+
+    vec4 image = texture(u_group_texture, v_texCoord);
+
     fragColor.rgb = normal * 0.5 + 0.5;
-    fragColor.a = 1.0;
+    fragColor.a = image.a;
 }

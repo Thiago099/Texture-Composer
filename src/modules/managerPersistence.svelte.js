@@ -177,6 +177,7 @@ class ManagerPersistence {
             id: item.id,
             name: item.name,
             convertToNormal: item.convertToNormal,
+            directXNormal: item.directXNormal,
             normalStrength: item.normalStrength,
             file:item.file?.id,
             colors: item.colors?[...item.colors]:null,
@@ -335,6 +336,7 @@ class ManagerPersistence {
                 compositionFile.image = compositionFile.canvas 
                 compositionFile.colors = item.colors?[...item.colors]:null
                 compositionFile.convertToNormal = item.convertToNormal
+                compositionFile.directXNormal = item.directXNormal
                 compositionFile.normalStrength = item.normalStrength
                 fileDict[compositionFile.id] = compositionFile
             }

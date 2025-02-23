@@ -27,6 +27,8 @@
   {#if manager.selectedFile.convertToNormal}
   <label>Normal Strength</label>
   <Range bind:value={manager.selectedFile.normalStrength} reset={()=>manager.selectedFile.normalStrength = 10} min={0} max={30} step={0.1} oninput={()=>{manager.updateScreen();}}></Range>
+  <label>DirectX Normal</label>
+  <Toggle bind:value={manager.selectedFile.directXNormal} oninput={()=>{manager.updateScreen();}}>DirectX Normal</Toggle>
   {/if}
   {/snippet}
 
