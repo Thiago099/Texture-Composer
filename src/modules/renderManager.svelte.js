@@ -1,7 +1,7 @@
 
 import { saveAs } from "file-saver";
 
-import { Composition, Manager } from "./manager.svelte"
+import { Composition, ImageFile, Manager } from "./manager.svelte"
 import { ColorPicker } from "./colorPicker.svelte";
 import { CompositionReference } from "./compositionReference.svelte";
 
@@ -10,6 +10,7 @@ const manager = Manager.GetSingleton()
 let singleton = null
 import JSZip from "jszip";
 import { SaveModalManager } from "./saveModalManager.svelte";
+import { ZipRendererReader } from "../lib/zip";
 
 class ZipWriter{
     constructor() {
@@ -74,18 +75,21 @@ class RenderManager{
         }
     }
     
-    async Download(){
+    async Download(outputs = this.outputs){
         const saveModalManager = SaveModalManager.GetSingleton();
 
 
-        const enabledOutputs = this.outputs.filter(x=>x.enabled)
+        const enabledOutputs = outputs.filter(x=>x.enabled)
         
         const renderedOutputs = []
+            let i = 0;
         for(const item of enabledOutputs){
             const image = await this.RenderOutput(item)
             if(image != null){
                 renderedOutputs.push({image, name:item.name})
             }
+            console.log(`Rendering: ${i/enabledOutputs.length*100}%`)
+            i++
         }
         if(renderedOutputs.length == 1){
 
@@ -164,6 +168,33 @@ class RenderManager{
             else{
                 this.outputs.push(new CompositionReference(null, this.GetAvailableName("Render Output")))
             }
+        }
+    }
+    RenderZipFile(){
+        return async e =>{
+            const result = []
+            const reader = await ZipRendererReader.CreateAsync()
+            const data = await reader.GetAllFiles();
+            for(const [compositionName, outputs] of Object.entries(data)){
+                for(const item of manager.files){
+                    if(item instanceof Composition && item.name.trim().toLowerCase() == compositionName.trim().toLowerCase()){
+
+                        for(const [outputName, files] of Object.entries(outputs)){
+                            const ref = item.CreateReference(compositionName + " - " + outputName)
+                            ref.Load()
+                            result.push(ref)
+                            for(const [fileName ,image] of Object.entries(files)){
+                                for(const file of ref.files){
+                                    if(file.baseFile.name.trim().toLowerCase() == fileName.trim().toLowerCase()){
+                                        file.file = new ImageFile(fileName, image)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            await this.Download(result)
         }
     }
 }   

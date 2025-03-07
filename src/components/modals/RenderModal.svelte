@@ -59,9 +59,10 @@ const confirmManager = ConfirmModalManager.GetSingleton()
   </div>
   {/if}
 </Modal>
-<Modal title="Rendering" width={800} height={600} bind:this={renderManager.modal} >
+<Modal title="Rendering" width={1400} height={800} bind:this={renderManager.modal} >
     <div  class="row">
     <button class="button full"onclick={renderManager.AddOutputEvent()}><i class="fa-solid fa-plus"></i> Add Output</button>
+    <button class="button full"onclick={renderManager.RenderZipFile()}><i class="fa-solid fa-file-zipper"></i> Render zip file</button>
     <button class="button full" onclick={()=>io.uploadMedias()}><i class="fa-solid fa-upload"></i> Upload Medias</button>
     <button class="button full" onclick={renderManager.UpdateAllPreviewEvent()}><i class="fa-solid fa-arrows-rotate"></i> Update All Previews</button>
     <button class="button full" onclick={()=>renderManager.Download()}><i class="fa-solid fa-camera"></i> Render</button>

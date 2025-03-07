@@ -1,8 +1,6 @@
-import JSZip from "jszip";
-import { saveAs } from "file-saver";
+
 import { Manager, ImageFile, Composition, Layer } from "./manager.svelte";
 import { GradientManager, GradientPicker } from "./gradientManager.svelte";
-import { LoadImage } from "../application/io.svelte";
 import { hexToRgb, rgbToHex } from "../lib/color";
 
 import { RenderManager } from "./renderManager.svelte";
@@ -12,106 +10,8 @@ import { Pattern } from "./pattern.svelte";
 
 import { ColorPicker } from "./colorPicker.svelte";
 
-function UploadZipAsync() {
-    return new Promise(resolve=>{
-        const input = document.createElement("input");
-        input.type = "file";
-        input.accept = ".tcx";
-        input.style.display = "none";
-      
-        input.addEventListener("change", (e) => resolve(e.target.files[0]));
-      
-        document.body.appendChild(input);
-        input.click();
-      
-        input.addEventListener("change", () => document.body.removeChild(input));
-    })
-}
+import { ZipReader, ZipWriter } from "../lib/zip";
 
-class ZipWriter{
-    constructor() {
-        this.zip = new JSZip();
-        this.images = this.zip.folder("Images");
-    }
-    WriteObject(name, data){
-        this.zip.file(name+".json", JSON.stringify(data));
-    }
-    WriteImage(name, dataUrl){
-        if(!dataUrl){
-            return
-        }
-        this.images .file(
-            name,
-            dataUrl.replace(/^data:.*?;base64,/, ""),
-            { base64: true }
-          );
-    }
-    Download(fileName){
-        this.zip.generateAsync({ type: "blob" }).then(function (content) {
-            saveAs(content, fileName);
-        });
-    }
-}
-function ToDataUrl(blob){
-    return new Promise(resolve=>{
-        const reader = new FileReader();
-
-        reader.onloadend = function () {
-            const dataUrl = reader.result;
-            resolve(dataUrl)
-        };
-        reader.readAsDataURL(blob);
-    })
-
-}
-class ZipReader{
-    constructor(zip) {
-        this.zip = zip
-        this.images = this.zip.folder("Images");
-    }
-    static async CreateAsync(file = null){
-        if(file == null){
-            file = await UploadZipAsync()
-        }
-        const buffer = await file.arrayBuffer();
-        const zip = await JSZip.loadAsync(buffer);
-        return new ZipReader(zip)
-    }
-    async GetObject(path){
-        const file = this.zip.file(path+".json")
-        if(file == null){
-            return null;
-        }
-        return JSON.parse(await file.async('text'));
-    }
-    async GetText(path){
-        return await this.zip.file(path).async('text');
-    }
-    async GetImage(path){
-        const entry = this.images.file(path);
-
-        const blob = await entry.async("blob");
-
-        const file = new File([blob], path.replace(/^Images\//gi, ""), {
-            type: blob.type,
-        });
-
-        const image = await LoadImage(file);    
-
-        return [file, image]
-    }
-    async GetImageDataUrl(path){
-        const entry = this.images.file(path);
-
-        if(!entry){
-            return null;
-        }
-
-        const blob = await entry.async("blob");
-
-        return await ToDataUrl(blob)
-    }
-}
 class ManagerPersistence {
   static Save(fileName) {
     const manager = Manager.GetSingleton()
