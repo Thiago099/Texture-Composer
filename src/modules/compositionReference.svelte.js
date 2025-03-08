@@ -47,14 +47,14 @@ class CompositionReference extends ListItem{
     name = $state("")
     thumbnail = $state(null)
     preview = $state(null)
-    constructor(base, name) {
+    constructor(base, name, updatePreview = true) {
         super()
         if(name){
             this.name = name
         }
         if(base){
             this.base = base
-            this.Load()
+            this.Load(updatePreview)
         }
         this.id = guid()
     }
@@ -140,10 +140,12 @@ class CompositionReference extends ListItem{
         }
         return color
     }
-    Load(){
+    Load(updatePreview = true){
         this.files = this.base?.GetUniqueFiles()?.map(x=>new CompositionTextureSwap(x))??[]
         this.colors = this.base?.GetUniqueColors()?.map(x=>new CompositionColorSwap(x))??[]
-        this.UpdatePreview()
+        if(updatePreview){
+            this.UpdatePreview()
+        }
     }
     Copy(){
         const result = new CompositionReference()

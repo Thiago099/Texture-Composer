@@ -18,6 +18,7 @@
   import ConfirmModal from "./components/modals/ConfirmModal.svelte";
   import SaveModal from "./components/modals/SaveModal.svelte";
   import ContextMenu from "./components/ContextMenu.svelte";
+    import LoadingScreen from "./components/LoadingScreen.svelte";
 
   onMount(async ()=>{
     let gridElement = document.querySelector('.grid-container');
@@ -77,6 +78,7 @@
 <ConfirmModal></ConfirmModal>
 <SaveModal></SaveModal>
 <ContextMenu></ContextMenu>
+<LoadingScreen></LoadingScreen>
 <style>
 .header { grid-area: header; }
 .main { grid-area: main; }

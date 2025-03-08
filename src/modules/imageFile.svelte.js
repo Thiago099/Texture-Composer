@@ -5,7 +5,7 @@ import { getExtension } from "../lib/file";
 class ImageFile extends ListItem{
     name = $state("")
     version = 1
-    constructor(name, image) {
+    constructor(name, image, createThumb = true) {
         super()
         if(!image || !name){
             return
@@ -14,7 +14,9 @@ class ImageFile extends ListItem{
         this.name = name
         this.extension = getExtension(name)
         this.image = image
-        this.thumbnail = createThumbnail(image, {width:40, height:40})
+        if(createThumb){
+            this.thumbnail = createThumbnail(image, {width:40, height:40})
+        }
     }
     Contains(file){
         return false;

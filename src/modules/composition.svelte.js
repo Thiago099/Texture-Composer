@@ -58,8 +58,8 @@ class Composition extends ListItem {
         this.layers.splice(index, 0, this.layers[index].Copy())
         this.selectedLayer = this.layers[index]
     }
-    CreateReference(name){
-        return new CompositionReference(this, name)
+    CreateReference(name, updatePreview = true){
+        return new CompositionReference(this, name, updatePreview)
     }
     Copy(){
         const result = new Composition()

@@ -1,17 +1,18 @@
 
 import { saveAs } from "file-saver";
-
 import { Composition, ImageFile, Manager } from "./manager.svelte"
 import { ColorPicker } from "./colorPicker.svelte";
 import { CompositionReference } from "./compositionReference.svelte";
+import { SaveModalManager } from "./saveModalManager.svelte";
+import { ZipRendererReader } from "../lib/zip";
+import { LoadingScreenManager } from "./loadingScreenManager.svelte";
 
 const manager = Manager.GetSingleton()
 
 let singleton = null
 import JSZip from "jszip";
-import { SaveModalManager } from "./saveModalManager.svelte";
-import { ZipRendererReader } from "../lib/zip";
 
+const loadingScreenManager = LoadingScreenManager.GetSingleton()
 class ZipWriter{
     constructor() {
         this.zip = new JSZip();
@@ -76,41 +77,51 @@ class RenderManager{
     }
     
     async Download(outputs = this.outputs){
+
+        loadingScreenManager.Start("Rendering files")
+
         const saveModalManager = SaveModalManager.GetSingleton();
 
-
         const enabledOutputs = outputs.filter(x=>x.enabled)
-        
-        const renderedOutputs = []
+
+        try{
+            loadingScreenManager.StartTask("Rendering outputs", enabledOutputs.length)
+            const renderedOutputs = []
             let i = 0;
-        for(const item of enabledOutputs){
-            const image = await this.RenderOutput(item)
-            if(image != null){
-                renderedOutputs.push({image, name:item.name})
-            }
-            console.log(`Rendering: ${i/enabledOutputs.length*100}%`)
-            i++
-        }
-        if(renderedOutputs.length == 1){
-
-            saveModalManager.Prompt("Render Asset", renderedOutputs[0].name , async fileName =>{
-                const link = document.createElement('a');
-                link.href =  renderedOutputs[0].image;
-                link.download = fileName + '.png';
-                link.click();
-            })
-            
-        }
-        else if (renderedOutputs.length > 0){
-            saveModalManager.Prompt("Render Assets", manager.projectName + " Assets" , async fileName =>{
-                const writer = new ZipWriter()
-                for(const output of renderedOutputs){
-                    writer.WriteImage(output.name+".png", output.image)
+            for(const item of enabledOutputs){
+                console.log(`Starting rendering: ${i/enabledOutputs.length*100}%`)
+                const image = await this.RenderOutput(item)
+                await new Promise(resolve => setTimeout(resolve, 100));
+                loadingScreenManager.StartItem(item.name)
+                if(image != null){
+                    renderedOutputs.push({image, name:item.name})
                 }
-                writer.Download(fileName)
-            })
+                console.log(`Finished rendering: ${i/enabledOutputs.length*100}%`)
+                i++
+            }
+            if(renderedOutputs.length == 1){
+    
+                saveModalManager.Prompt("Save Asset", renderedOutputs[0].name , async fileName =>{
+                    const link = document.createElement('a');
+                    link.href =  renderedOutputs[0].image;
+                    link.download = fileName + '.png';
+                    link.click();
+                })
+                
+            }
+            else if (renderedOutputs.length > 0){
+                saveModalManager.Prompt("Save Assets", manager.projectName + " Assets" , async fileName =>{
+                    const writer = new ZipWriter()
+                    for(const output of renderedOutputs){
+                        writer.WriteImage(output.name+".png", output.image)
+                    }
+                    writer.Download(fileName)
+                })
+            }
         }
-
+        finally{
+            loadingScreenManager.End()
+        }
     }
     OpenContentModalEvent(output){
         return e =>{
@@ -180,13 +191,12 @@ class RenderManager{
                     if(item instanceof Composition && item.name.trim().toLowerCase() == compositionName.trim().toLowerCase()){
 
                         for(const [outputName, files] of Object.entries(outputs)){
-                            const ref = item.CreateReference(compositionName + " - " + outputName)
-                            ref.Load()
+                            const ref = item.CreateReference(compositionName + " - " + outputName, false)
                             result.push(ref)
                             for(const [fileName ,image] of Object.entries(files)){
                                 for(const file of ref.files){
                                     if(file.baseFile.name.trim().toLowerCase() == fileName.trim().toLowerCase()){
-                                        file.file = new ImageFile(fileName, image)
+                                        file.file = new ImageFile(fileName, image, false)
                                     }
                                 }
                             }
