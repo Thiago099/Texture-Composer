@@ -47,10 +47,10 @@ class Layer extends ListItem{
     renderingContext = new RenderingContext(false)
     constructor(name) {
         super();
+        this.id = guid()
         if(name == null){
             return
         }
-        this.id = guid()
         this.name = name
     }
 

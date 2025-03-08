@@ -254,7 +254,7 @@ class ManagerPersistence {
     
                     const layer = new Layer()
                     layer.thumbnail = await zip.GetImageDataUrl(layerItem.id + "_thumb.png")
-                    layer.id =layerItem.id
+                    layer.id = layerItem.id
                     layer.name = layerItem.name
                     layer.visible = layerItem.visible
                     layer.alpha = layerItem.alpha
@@ -290,7 +290,7 @@ class ManagerPersistence {
                     layer.tile = layerItem.tile,
                     layer.xOffset = layerItem.xOffset,
                     layer.yOffset = layerItem.yOffset
-    
+                    
                     compositionFile.layers.push(layer)
                 }
     
