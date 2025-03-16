@@ -1,7 +1,4 @@
 <script>
-  import { LoadImage } from '../application/io.svelte.js';
-
-
   import {Data} from "../modules/dragManager.svelte"
   import {ImageFile, Composition, Manager, Layer} from "../modules/manager.svelte.js"
   import { Pattern } from '../modules/pattern.svelte.js';

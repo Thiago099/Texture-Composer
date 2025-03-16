@@ -40,6 +40,20 @@ function uploadMedias(){
     fileInput.addEventListener("input",()=>{
         loadFiles(fileInput.files)
     })
+  document.addEventListener("paste", (event) => {
+    const items = (event.clipboardData || event.originalEvent.clipboardData).items;
+    const files = [];
+
+    for (const item of items) {
+        if (item.kind === "file") {
+            files.push(item.getAsFile());
+        }
+    }
+
+    if (files.length > 0) {
+        loadFiles(files);
+    }
+});
   })
 
     document.body.addEventListener('dragover', event => {

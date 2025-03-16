@@ -254,7 +254,9 @@ class ManagerPersistence {
     
                     const layer = new Layer()
                     layer.thumbnail = await zip.GetImageDataUrl(layerItem.id + "_thumb.png")
-                    layer.id = layerItem.id
+                    if(layerItem.id){
+                        layer.id = layerItem.id
+                    }
                     layer.name = layerItem.name
                     layer.visible = layerItem.visible
                     layer.alpha = layerItem.alpha
